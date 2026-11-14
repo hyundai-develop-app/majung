@@ -79,10 +79,10 @@ Pleos Connect 디스플레이 **1:1 모드 앱 영역 841×1210**(1dp=1px, 에�
 ## 빌드
 
 - minSdk 28, target/compile 36, Java 17 (JDK 21로 빌드 확인), Gradle 8.14.3
-- `gradle.properties`에 특정 맥의 JDK 경로(`org.gradle.java.home`)가 적혀 있다. 다른 PC에서는 아래처럼 자기 JDK 경로로 덮어쓴다.
+- JDK 17 이상(`JAVA_HOME`)과 Android SDK(`ANDROID_HOME` 또는 `local.properties`의 `sdk.dir`)가 필요하다.
 
 ```bash
-./gradlew -Dorg.gradle.java.home=<내 JDK 경로> :app:assembleRelease :app:testReleaseUnitTest
+./gradlew :app:assembleRelease :app:testReleaseUnitTest
 # 결과: app/build/outputs/apk/release/app-release.apk → apk/붕붕이_마중_release.apk 로 복사
 ```
 
