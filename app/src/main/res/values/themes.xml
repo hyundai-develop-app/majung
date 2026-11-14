@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.Arrival" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+</resources>

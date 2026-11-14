@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#F3F4F6</color>
+    <color name="card">#FFFFFF</color>
+    <color name="card_border">#E5E7EB</color>
+    <color name="card_dark">#1C1D21</color>
+    <color name="text">#111827</color>
+    <color name="text_sub">#6B7280</color>
+    <color name="text_faint">#9CA3AF</color>
+    <color name="text_on_dark_sub">#A1A1AA</color>
+    <color name="blue">#2F6FED</color>
+    <color name="blue_soft">#E3EDFF</color>
+    <color name="blue_pale">#C7D7FF</color>
+    <color name="navy">#1E3A8A</color>
+    <color name="selected">#DCE7FB</color>
+    <color name="orange">#E8590C</color>
+    <color name="orange_soft">#FFE8DC</color>
+    <color name="chip_gray">#EEF0F3</color>
+    <color name="chip_gray_text">#4B5563</color>
+    <color name="pill">#D1D5DB</color>
+    <color name="track">#3A3D44</color>
+</resources>

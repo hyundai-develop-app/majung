@@ -1,0 +1,10 @@
+<!-- 음성 카드: 내비 길안내가 끝나기를 기다리는 중 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="56dp"
+    android:height="32dp"
+    android:viewportWidth="56"
+    android:viewportHeight="32">
+    <path
+        android:fillColor="#A1A1AA"
+        android:pathData="M28,3 L38,29 L28,23 L18,29 Z" />
+</vector>

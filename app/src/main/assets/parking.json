@@ -1,0 +1,18 @@
+{
+  "note": "샘플 데이터. 서울 10곳은 좌표 대략값, 요금·무료시간·입구는 시연용 가정값. 판교 3곳은 좌표 OpenStreetMap, 요금·임시 주차장은 현대백화점 판교점 공식 위치/주차 페이지(2026-11-09 확인), 수용 대수는 모름(0), 임시 주차장은 주말·공휴일만 운영(weekendOnly, 공휴일은 아직 판단 안 함). 실제 서비스는 전국주차장정보표준데이터(공공데이터포털)로 대체한다.",
+  "parking": [
+    {"name": "코엑스 주차장", "lat": 37.5116, "lng": 127.0598, "address": "서울 강남구 영동대로 513 지하", "capacity": 2000, "fee": "10분 800원", "freeMinutes": 30, "entrance": "건물 뒷편 영동대로 쪽 입구, 봉은사로에서 우회전", "kind": "건물"},
+    {"name": "봉은사 공영주차장", "lat": 37.5146, "lng": 127.0575, "address": "서울 강남구 봉은사로 531", "capacity": 300, "fee": "5분 400원", "freeMinutes": 0, "entrance": "봉은사로에서 바로 진입, 넓음", "kind": "공영"},
+    {"name": "롯데월드몰 주차장", "lat": 37.5131, "lng": 127.1040, "address": "서울 송파구 올림픽로 300 지하", "capacity": 2700, "fee": "10분 1,000원", "freeMinutes": 120, "entrance": "올림픽로에서 진입, 입구 2곳", "kind": "건물"},
+    {"name": "잠실종합운동장 주차장", "lat": 37.5150, "lng": 127.0730, "address": "서울 송파구 올림픽로 25", "capacity": 1800, "fee": "경기일 1일 4,000원", "freeMinutes": 0, "entrance": "동문 진입, 경기 종료 후 출차 정체 심함", "kind": "공영"},
+    {"name": "서울역 서부 주차장", "lat": 37.5530, "lng": 126.9690, "address": "서울 용산구 청파로 378", "capacity": 600, "fee": "10분 600원", "freeMinutes": 0, "entrance": "서부역 쪽 진입", "kind": "공영"},
+    {"name": "강남역 공영주차장", "lat": 37.4965, "lng": 127.0290, "address": "서울 강남구 테헤란로 지하", "capacity": 350, "fee": "5분 400원", "freeMinutes": 0, "entrance": "테헤란로 이면도로 진입, 일방통행", "kind": "공영"},
+    {"name": "경복궁 주차장", "lat": 37.5770, "lng": 126.9750, "address": "서울 종로구 사직로 161", "capacity": 240, "fee": "최초 2시간 3,000원", "freeMinutes": 0, "entrance": "사직로 서쪽 입구", "kind": "공영"},
+    {"name": "DDP 지하주차장", "lat": 37.5660, "lng": 127.0105, "address": "서울 중구 을지로 281 지하", "capacity": 650, "fee": "10분 900원", "freeMinutes": 0, "entrance": "을지로 방면에서 진입", "kind": "건물"},
+    {"name": "IFC몰 주차장", "lat": 37.5245, "lng": 126.9265, "address": "서울 영등포구 국제금융로 10 지하", "capacity": 1800, "fee": "10분 1,000원", "freeMinutes": 60, "entrance": "국제금융로 진입", "kind": "건물"},
+    {"name": "남산 공영주차장", "lat": 37.5540, "lng": 126.9900, "address": "서울 중구 소파로", "capacity": 300, "fee": "최초 1시간 2,000원", "freeMinutes": 0, "entrance": "소파로 진입, 타워까지 도보 15분", "kind": "공영"},
+    {"name": "현대백화점 판교점 주차장", "lat": 37.392799, "lng": 127.111991, "address": "경기 성남시 분당구 판교역로146번길 20", "capacity": 0, "fee": "최초 30분 무료, 초과 10분당 1,000원, 구매 금액별 1~5시간 무료", "freeMinutes": 30, "entrance": "", "kind": "건물"},
+    {"name": "알파돔 임시 주차장", "lat": 37.394143, "lng": 127.110328, "address": "경기 성남시 분당구 판교역로146번길 알파돔타워", "capacity": 0, "fee": "주말·공휴일 운영 시간 내 무료", "freeMinutes": 0, "entrance": "", "kind": "임시", "weekendOnly": true},
+    {"name": "테크원 임시 주차장", "lat": 37.395417, "lng": 127.112183, "address": "경기 성남시 분당구 분당내곡로 131 판교 테크원타워", "capacity": 0, "fee": "주말·공휴일 운영 시간 내 무료", "freeMinutes": 0, "entrance": "", "kind": "임시", "weekendOnly": true}
+  ]
+}
