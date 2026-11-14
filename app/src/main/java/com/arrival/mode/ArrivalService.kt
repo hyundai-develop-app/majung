@@ -77,6 +77,7 @@ class ArrivalService : Service() {
         ArrivalBus.onAccept = ::accept
         ArrivalBus.onUndo = ::undo
         ArrivalBus.onAskSpot = ::askSpot
+        ArrivalBus.onGoHome = ::goHome
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int) = START_STICKY
@@ -89,7 +90,9 @@ class ArrivalService : Service() {
             dest = e
             val remain = remainText(e.remainM, e.remainSec)
             if (changed) ArrivalBus.post(ArrivalUi(Screen.WAITING, e.name, remain))
-            else if (ArrivalBus.last.screen == Screen.WAITING) ArrivalBus.post(ArrivalBus.last.copy(remainText = remain))
+            // 집 안내를 요청한 직후엔 내비가 아직 이전 목적지를 줄 수 있다. 화면에 띄운 목적지의 남은 거리만 갱신한다.
+            else if (ArrivalBus.last.screen == Screen.WAITING && ArrivalBus.last.destName == e.name)
+                ArrivalBus.post(ArrivalBus.last.copy(remainText = remain))
         }
         engine.onEvent(e)
     }
@@ -177,6 +180,12 @@ class ArrivalService : Service() {
         ArrivalBus.post(ArrivalBus.last.copy(screen = Screen.BRIEF))
     }
 
+    /** 05 화면 '집' + '안내 시작': 내비 목적지를 집으로 바꾼다. 남은 거리는 다음 내비 조회(10초 이내)에서 채워진다. */
+    private fun goHome() {
+        navi.routeTo(HOME)
+        ArrivalBus.post(ArrivalUi(Screen.WAITING, HOME.name, "경로를 찾고 있어요"))
+    }
+
     private fun onGear(g: VehicleGear) {
         val prev = lastGear
         lastGear = g
@@ -220,6 +229,7 @@ class ArrivalService : Service() {
         ArrivalBus.onAccept = null
         ArrivalBus.onUndo = null
         ArrivalBus.onAskSpot = null
+        ArrivalBus.onGoHome = null
         listener.release()
         runCatching { fused.unregisterFusedLocationCallback(track); fused.release() }
         navi.release()
@@ -236,5 +246,7 @@ class ArrivalService : Service() {
         private const val GEAR_WARMUP_MS = 2000L
         private const val REPLY_PCM = "demo_reply.pcm"
         private const val SPOT_PCM = "demo_spot.pcm"
+        // shortcut: 시연용 고정 집 주소(화서역), 사용자별 집 설정이 생기면 그 값으로 교체
+        private val HOME = ParkingLot("화서역", 37.2840, 126.9896, "경기 수원시 팔달구 덕영대로 692", 0, "", 0, "", "")
     }
 }

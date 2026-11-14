@@ -30,7 +30,10 @@ class MainActivity : AppCompatActivity() {
         b.retryRow.setOnClickListener { show(Screen.ASK_SPOT); ArrivalBus.onAskSpot?.invoke() }
         b.homeCard.setOnClickListener { selectDestination(home = true) }
         b.workCard.setOnClickListener { selectDestination(home = false) }
-        b.startButton.setOnClickListener { show(Screen.WAITING) }
+        b.startButton.setOnClickListener {
+            val goHome = ArrivalBus.onGoHome
+            if (homeSelected && goHome != null) goHome() else show(Screen.WAITING)
+        }
 
         b.notice.setOnClickListener { askAgain() }
 
@@ -181,7 +184,11 @@ class MainActivity : AppCompatActivity() {
 
     fun show(screen: Screen) { b.flipper.displayedChild = screen.ordinal }
 
+    /** 05 화면에서 고른 카드. 레이아웃 기본값이 '집' 선택이다. */
+    private var homeSelected = true
+
     private fun selectDestination(home: Boolean) {
+        homeSelected = home
         b.homeCard.setBackgroundResource(if (home) R.drawable.bg_card_selected else R.drawable.bg_card)
         b.workCard.setBackgroundResource(if (home) R.drawable.bg_card else R.drawable.bg_card_selected)
     }

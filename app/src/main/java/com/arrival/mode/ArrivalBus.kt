@@ -34,6 +34,7 @@ object ArrivalBus {
     var onAccept: (() -> Unit)? = null
     var onUndo: (() -> Unit)? = null
     var onAskSpot: (() -> Unit)? = null
+    var onGoHome: (() -> Unit)? = null
 
     /** 음성 상태는 화면 전환과 따로 자주 바뀌어 별도 통로로 보낸다. */
     var lastVoice = VoiceState.IDLE; private set
